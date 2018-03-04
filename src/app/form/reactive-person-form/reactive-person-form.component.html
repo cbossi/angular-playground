@@ -6,11 +6,9 @@
     <label for="name">Name</label>
     <input type="text" class="form-control"
            id="name" formControlName="name"
-           [class.is-invalid]="needsValidationFeedback('name')">
+           [class.is-invalid]="needsValidationFeedback(personForm.controls.name)" />
     <div class="invalid-feedback">
-      <div *ngIf="personForm.get('name').errors && personForm.get('name').errors.required">
-        Field is required
-      </div>
+      Field is required
     </div>
   </div>
 

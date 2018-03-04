@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {RoutedComponent} from '../../shared/routed.component';
 import {TitleService} from '../../title/title.service';
@@ -39,8 +39,8 @@ export class ReactivePersonFormComponent extends RoutedComponent {
     });
   }
 
-  public needsValidationFeedback(fieldName: string): boolean {
-    return needsValidationFeedback(this.personForm.get(fieldName));
+  public needsValidationFeedback(field: AbstractControl): boolean {
+    return needsValidationFeedback(field);
   }
 
   public submit() {
