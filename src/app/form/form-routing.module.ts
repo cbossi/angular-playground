@@ -6,17 +6,17 @@ import {TemplateDrivenPersonFormComponent} from './template-driven-person-form/t
 const routes: Routes = [
   {
     path: 'form',
-    data: { title: 'Forms' },
+    data: {title: 'Forms'},
     children: [
       {
         path: 'td',
         component: TemplateDrivenPersonFormComponent,
-        data: { title: 'Template Driven Form' }
+        data: {title: 'Template Driven Form'}
       },
       {
         path: 'reactive',
         component: ReactivePersonFormComponent,
-        data: { title: 'Reactive Form' }
+        data: {title: 'Reactive Form'}
       },
     ]
   }
