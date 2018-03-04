@@ -11,12 +11,12 @@ const routes: Routes = [
       {
         path: 'td',
         component: TemplateDrivenPersonFormComponent,
-        data: { title: 'Template Driven' }
+        data: { title: 'Template Driven Form' }
       },
       {
         path: 'reactive',
         component: ReactivePersonFormComponent,
-        data: { title: 'Reactive' }
+        data: { title: 'Reactive Form' }
       },
     ]
   }
