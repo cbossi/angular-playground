@@ -1,3 +1,90 @@
-<p>
-  reactive-person-form works!
-</p>
+<form [formGroup]="personForm" (submit)="submit()">
+
+  <h5>Personal Information</h5>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control"
+           id="name" formControlName="name"
+           [class.is-invalid]="needsValidationFeedback('name')">
+    <div class="invalid-feedback">
+      <div *ngIf="personForm.get('name').errors && personForm.get('name').errors.required">
+        Field is required
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-6">
+      <label for="gender">Gender</label>
+      <select class="form-control" id="gender" formControlName="gender">
+        <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-6">
+      <label for="age">Age</label>
+      <input type="number" class="form-control" id="age" formControlName="age">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-6">
+      <label for="email">E-Mail</label>
+      <div class="input-group">
+        <input type="email" class="form-control" id="email" formControlName="email">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-12 col-lg-6">
+      <label for="phone">Phone Number</label>
+      <div class="input-group">
+        <input type="tel" class="form-control" id="phone" formControlName="phone">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i class="fas fa-phone"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5>Address</h5>
+  <div class="form-row" formGroupName="address">
+
+    <div class="form-group col-12 col-lg-5">
+      <label for="street">Street</label>
+      <input type="text" class="form-control" id="street" formControlName="street">
+    </div>
+
+    <div class="form-group col-4 col-lg-2">
+      <label for="postalCode">Postal Code</label>
+      <input type="text" class="form-control" id="postalCode" formControlName="postalCode">
+    </div>
+
+    <div class="form-group col-8 col-lg-5">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" formControlName="city">
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <div *ngIf="person;else other_content" class="alert alert-success mt-4">
+    <pre>Submitted person: {{ person | json }}</pre>
+  </div>
+
+</form>
+
+<ng-template #other_content>
+  <div class="alert alert-secondary mt-4" role="alert">
+    <pre>Form status: {{ personForm.status | json }}</pre>
+    <pre>Form value: {{ personForm.value | json }}</pre>
+  </div>
+</ng-template>
