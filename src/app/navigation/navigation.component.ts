@@ -13,4 +13,8 @@ export class NavigationComponent {
   constructor(router: Router) {
     this.routes = router.config;
   }
+
+  public toggleCollapsed() {
+    this.collapsed = !this.collapsed;
+  }
 }
