@@ -1,14 +1,14 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule} from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AppRoutingModule} from './app-routing.module';
 
 
 import {AppComponent} from './app.component';
-import {RouterModule} from '@angular/router';
-import {AppRoutingModule} from './app-routing.module';
 import {FormModule} from './form/form.module';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { NavigationComponent } from './navigation/navigation.component';
-import { TitleComponent } from './title/title.component';
+import {NavigationComponent} from './navigation/navigation.component';
+import {TitleComponent} from './title/title.component';
 import {TitleService} from './title/title.service';
 
 

@@ -1,6 +1,6 @@
 import {ActivatedRoute} from '@angular/router';
-import {TitleService} from '../title/title.service';
 import 'rxjs/add/operator/map';
+import {TitleService} from '../title/title.service';
 
 export abstract class RoutedComponent {
 

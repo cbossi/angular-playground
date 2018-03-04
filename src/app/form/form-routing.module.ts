@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {TemplateDrivenPersonFormComponent} from './template-driven-person-form/template-driven-person-form.component';
 import {ReactivePersonFormComponent} from './reactive-person-form/reactive-person-form.component';
+import {TemplateDrivenPersonFormComponent} from './template-driven-person-form/template-driven-person-form.component';
 
 const routes: Routes = [
   {
