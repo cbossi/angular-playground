@@ -13,8 +13,8 @@ export class TitleService {
     this.title = this.titleSubject.asObservable();
   }
 
-  public updateTitle(title: string): void {
-    this.titleSubject.next(title);
+  public updateTitle(title: Observable<string>): void {
+    title.subscribe(this.titleSubject);
   }
 
 }

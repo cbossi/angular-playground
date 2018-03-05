@@ -9,9 +9,7 @@ export abstract class RoutedComponent {
     /* This cannot be done in the AppComponent, since ActivatedRoute cannot be accessed from a component outside the router-outlet:
      * https://stackoverflow.com/a/45737376/6231489
      */
-    activatedRoute.data
-      .map(data => data.title)
-      .subscribe(title => titleService.updateTitle(title));
+    titleService.updateTitle(activatedRoute.data.map(data => data.title));
   }
 
 }
