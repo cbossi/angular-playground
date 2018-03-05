@@ -1,28 +1,48 @@
-<form [formGroup]="personForm" (submit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()">
 
   <h5>Personal Information</h5>
 
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" class="form-control"
-           id="name" formControlName="name"
-           [class.is-invalid]="needsValidationFeedback(personForm.controls.name)" />
+    <input type="text"
+           class="form-control"
+           id="name"
+           formControlName="name"
+           [class.is-invalid]="isInvalid(nameField)">
     <div class="invalid-feedback">
-      Field is required
+      Name is required.
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-6">
       <label for="gender">Gender</label>
-      <select class="form-control" id="gender" formControlName="gender">
+      <select class="form-control"
+              id="gender"
+              formControlName="gender"
+              [class.is-invalid]="isInvalid(genderField)">
         <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
       </select>
+      <div class="invalid-feedback">
+        Gender is required.
+      </div>
     </div>
 
     <div class="form-group col-6">
       <label for="age">Age</label>
-      <input type="number" class="form-control" id="age" formControlName="age">
+      <input type="number"
+             class="form-control"
+             id="age"
+             formControlName="age"
+             [class.is-invalid]="isInvalid(ageField)">
+      <div class="invalid-feedback">
+        <ng-container *ngIf="ageField.errors?.required">
+          Age is required.
+        </ng-container>
+        <ng-container *ngIf="ageField.errors?.min">
+          Age must not be smaller than {{ageField.errors.min.min}}.
+        </ng-container>
+      </div>
     </div>
   </div>
 
@@ -30,7 +50,11 @@
     <div class="form-group col-12 col-lg-6">
       <label for="email">E-Mail</label>
       <div class="input-group">
-        <input type="email" class="form-control" id="email" formControlName="email">
+        <input type="email"
+               class="form-control"
+               id="email"
+               formControlName="email"
+               [class.is-invalid]="isInvalid(emailField)">
         <div class="input-group-append">
           <span class="input-group-text">
             <i class="fas fa-envelope"></i>
@@ -42,7 +66,10 @@
     <div class="form-group col-12 col-lg-6">
       <label for="phone">Phone Number</label>
       <div class="input-group">
-        <input type="tel" class="form-control" id="phone" formControlName="phone">
+        <input type="tel"
+               class="form-control"
+               id="phone"
+               formControlName="phone">
         <div class="input-group-append">
           <span class="input-group-text">
             <i class="fas fa-phone"></i>
@@ -54,22 +81,33 @@
 
   <h5>Address</h5>
   <div class="form-row" formGroupName="address">
-
     <div class="form-group col-12 col-lg-5">
       <label for="street">Street</label>
-      <input type="text" class="form-control" id="street" formControlName="street">
+      <input type="text"
+             class="form-control"
+             id="street"
+             formControlName="street">
     </div>
 
     <div class="form-group col-4 col-lg-2">
       <label for="postalCode">Postal Code</label>
-      <input type="text" class="form-control" id="postalCode" formControlName="postalCode">
+      <input type="text"
+             class="form-control"
+             id="postalCode"
+             formControlName="postalCode">
     </div>
 
     <div class="form-group col-8 col-lg-5">
       <label for="city">City</label>
-      <input type="text" class="form-control" id="city" formControlName="city">
+      <input type="text"
+             class="form-control"
+             id="city"
+             formControlName="city"
+             [class.is-invalid]="isInvalid(cityField)">
+      <div class="invalid-feedback">
+        City is required.
+      </div>
     </div>
-
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -82,7 +120,7 @@
 
 <ng-template #other_content>
   <div class="alert alert-secondary mt-4" role="alert">
-    <pre>Form status: {{ personForm.status | json }}</pre>
-    <pre>Form value: {{ personForm.value | json }}</pre>
+    <pre>Form status: {{ form.status | json }}</pre>
+    <pre>Form value: {{ form.value | json }}</pre>
   </div>
 </ng-template>

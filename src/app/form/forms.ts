@@ -1,5 +1,12 @@
-import {AbstractControl, FormControl} from '@angular/forms';
+import {AbstractControl, FormGroup} from '@angular/forms';
 
-export function needsValidationFeedback(field: AbstractControl): boolean {
+export function isInvalid(field: AbstractControl): boolean {
   return field.invalid && (field.dirty || field.touched);
+}
+
+export function markAllAsTouched(formControl: AbstractControl): void {
+  if (formControl instanceof FormGroup) {
+    Object.values(formControl.controls).forEach(control => markAllAsTouched(control));
+  }
+  formControl.markAsTouched();
 }

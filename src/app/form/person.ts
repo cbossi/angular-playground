@@ -10,4 +10,8 @@ export class Person {
   public readonly phone: string;
   public readonly address: Address;
 
+  constructor() {
+    this.address = new Address();
+  }
+
 }
