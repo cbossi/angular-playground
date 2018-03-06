@@ -2,7 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {environment} from '../../../environments/environment';
-import {Account} from '../account';
+import {Account} from './account';
 
 @Injectable()
 export class AccountHttpClient {

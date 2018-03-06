@@ -5,8 +5,8 @@ import {TitleService} from '../../title/title.service';
 import {UsernameValidator} from '../account/username.validator';
 import {FormComponent} from '../form.component';
 import {isInvalid, validEmailAddress} from '../validation/validation.util';
-import {Gender} from '../gender';
-import {Account} from '../account';
+import {Gender} from '../account/gender';
+import {Account} from '../account/account';
 
 @Component({
   templateUrl: './reactive-account-form.component.html',
