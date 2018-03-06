@@ -1,12 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AbstractControl, NgForm} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
-import {RoutedComponent} from '../../shared/routed.component';
 import {TitleService} from '../../title/title.service';
-import {FormComponent} from '../form.component';
-import {isInvalid, markAllAsTouched} from '../validation/validation.util';
-import {Gender} from '../account/gender';
 import {Account} from '../account/account';
+import {Gender} from '../account/gender';
+import {FormComponent} from '../form.component';
+import {isInvalid} from '../validation/validation.util';
 
 @Component({
   templateUrl: './template-driven-account-form.component.html',

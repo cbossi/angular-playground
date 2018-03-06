@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {TitleService} from '../../title/title.service';
+import {Account} from '../account/account';
+import {Gender} from '../account/gender';
 import {UsernameValidator} from '../account/username.validator';
 import {FormComponent} from '../form.component';
 import {isInvalid, validEmailAddress} from '../validation/validation.util';
-import {Gender} from '../account/gender';
-import {Account} from '../account/account';
 
 @Component({
   templateUrl: './reactive-account-form.component.html',
