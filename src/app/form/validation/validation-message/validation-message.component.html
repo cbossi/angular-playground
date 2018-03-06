@@ -1,9 +1,8 @@
 <ng-container>
-  {{name||'Field'}}
   <ng-container *ngIf="field.errors?.required">
-    is required.
+    {{name||'Field'}} is required.
   </ng-container>
   <ng-container *ngIf="field.errors?.min">
-    must not be smaller than {{field.errors.min.min}}.
+    {{name||'Field'}} must not be smaller than {{field.errors.min.min}}.
   </ng-container>
 </ng-container>

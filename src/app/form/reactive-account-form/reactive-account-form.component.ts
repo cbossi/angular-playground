@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {TitleService} from '../../title/title.service';
+import {UsernameValidator} from '../account/username.validator';
 import {FormComponent} from '../form.component';
 import {isInvalid, validEmailAddress} from '../validation/validation.util';
 import {Gender} from '../gender';
@@ -18,14 +19,15 @@ export class ReactiveAccountFormComponent extends FormComponent {
 
   constructor(activatedRoute: ActivatedRoute,
               titleService: TitleService,
-              formBuilder: FormBuilder) {
+              formBuilder: FormBuilder,
+              usernameValidator: UsernameValidator) {
     super(activatedRoute, titleService);
-    this.form = this.buildForm(formBuilder);
+    this.form = this.buildForm(formBuilder, usernameValidator);
   }
 
-  private buildForm(formBuilder: FormBuilder): FormGroup {
+  private buildForm(formBuilder: FormBuilder, usernameValidator: UsernameValidator): FormGroup {
     return formBuilder.group({
-      username: ['', Validators.required],
+      username: ['', [Validators.required], [usernameValidator]],
       password: ['', Validators.required],
       passwordConfirmation: ['', Validators.required],
       name: ['', Validators.required],

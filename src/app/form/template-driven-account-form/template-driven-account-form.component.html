@@ -8,11 +8,14 @@
            id="username"
            name="username"
            [(ngModel)]="account.username"
-           required
+           required unique-username
            [class.is-invalid]="isInvalid(usernameField)"
            #usernameField="ngModel">
     <div class="invalid-feedback">
       <validation-message [field]="usernameField" name="Username"></validation-message>
+      <ng-container *ngIf="usernameField.errors?.usernameAlreadyExists">
+        Username '{{usernameField.value}}' already exists, please select a different one.
+      </ng-container>
     </div>
   </div>
   <div class="form-row">
