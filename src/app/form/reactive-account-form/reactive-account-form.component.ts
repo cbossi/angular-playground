@@ -3,7 +3,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {ActivatedRoute} from '@angular/router';
 import {TitleService} from '../../title/title.service';
 import {FormComponent} from '../form.component';
-import {isInvalid} from '../forms';
+import {isInvalid} from '../validation/validation.util';
 import {Gender} from '../gender';
 import {Account} from '../account';
 

@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {RoutedComponent} from '../../shared/routed.component';
 import {TitleService} from '../../title/title.service';
 import {FormComponent} from '../form.component';
-import {isInvalid, markAllAsTouched} from '../forms';
+import {isInvalid, markAllAsTouched} from '../validation/validation.util';
 import {Gender} from '../gender';
 import {Account} from '../account';
 
