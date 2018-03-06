@@ -170,6 +170,20 @@
     </div>
   </div>
 
+  <div class="form-group form-check">
+    <input type="checkbox"
+           class="form-check-input"
+           id="acceptTermsAndConditions"
+           name="acceptTermsAndConditions"
+           [(ngModel)]="account.acceptTermsAndConditions"
+           [class.is-invalid]="isInvalid(acceptTermsAndConditionsField)"
+           #acceptTermsAndConditionsField="ngModel">
+    <label class="form-check-label" for="acceptTermsAndConditions">Accept terms and conditions</label>
+    <div class="invalid-feedback">
+      You have to accept the terms and conditions.
+    </div>
+  </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 
   <div *ngIf="submitted;else other_content" class="alert alert-success mt-4">

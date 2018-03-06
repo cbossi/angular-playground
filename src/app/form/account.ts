@@ -3,15 +3,16 @@ import {Gender} from './gender';
 
 export class Account {
 
-  public readonly username: string;
-  public readonly password: string;
-  public readonly passwordConfirmation: string;
-  public readonly name: string;
-  public readonly gender: Gender;
-  public readonly age: number;
-  public readonly email: string;
-  public readonly phone: string;
-  public readonly address: Address;
+  public username: string;
+  public password: string;
+  public passwordConfirmation: string;
+  public name: string;
+  public gender: Gender;
+  public age: number;
+  public email: string;
+  public phone: string;
+  public address: Address;
+  public acceptTermsAndConditions: boolean;
 
   constructor() {
     this.address = new Address();

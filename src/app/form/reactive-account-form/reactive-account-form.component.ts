@@ -38,6 +38,7 @@ export class ReactiveAccountFormComponent extends FormComponent {
         postalCode: [''],
         city: ['', [Validators.required]],
       }),
+      acceptTermsAndConditions: [false]
     });
   }
 
@@ -71,6 +72,10 @@ export class ReactiveAccountFormComponent extends FormComponent {
 
   get cityField(): AbstractControl {
     return this.form.get('address').get('city');
+  }
+
+  get acceptTermsAndConditionsField(): AbstractControl {
+    return this.form.get('acceptTermsAndConditions');
   }
 
   public isInvalid(field: AbstractControl): boolean {
