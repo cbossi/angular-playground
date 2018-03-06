@@ -1,7 +1,7 @@
 import {Address} from './address';
 import {Gender} from './gender';
 
-export class Person {
+export class Account {
 
   public readonly name: string;
   public readonly gender: Gender;

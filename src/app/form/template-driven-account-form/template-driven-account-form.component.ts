@@ -6,30 +6,30 @@ import {TitleService} from '../../title/title.service';
 import {FormComponent} from '../form.component';
 import {isInvalid, markAllAsTouched} from '../forms';
 import {Gender} from '../gender';
-import {Person} from '../person';
+import {Account} from '../account';
 
 @Component({
-  templateUrl: './template-driven-person-form.component.html',
+  templateUrl: './template-driven-account-form.component.html',
 })
-export class TemplateDrivenPersonFormComponent extends FormComponent implements OnInit {
+export class TemplateDrivenAccountFormComponent extends FormComponent implements OnInit {
 
-  @ViewChild('personForm')
-  personForm: NgForm;
+  @ViewChild('accountForm')
+  accountForm: NgForm;
 
   public genders = Object.values(Gender);
 
-  public person: Person;
+  public account: Account;
   public submitted: boolean;
 
   constructor(activatedRoute: ActivatedRoute,
               titleService: TitleService) {
     super(activatedRoute, titleService);
-    this.person = new Person();
+    this.account = new Account();
     this.submitted = false;
   }
 
   ngOnInit() {
-    this.form = this.personForm.form;
+    this.form = this.accountForm.form;
   }
 
   public isInvalid(field: AbstractControl): boolean {

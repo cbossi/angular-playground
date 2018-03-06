@@ -5,16 +5,16 @@ import {TitleService} from '../../title/title.service';
 import {FormComponent} from '../form.component';
 import {isInvalid} from '../forms';
 import {Gender} from '../gender';
-import {Person} from '../person';
+import {Account} from '../account';
 
 @Component({
-  templateUrl: './reactive-person-form.component.html',
+  templateUrl: './reactive-account-form.component.html',
 })
-export class ReactivePersonFormComponent extends FormComponent {
+export class ReactiveAccountFormComponent extends FormComponent {
 
   public genders = Object.values(Gender);
 
-  public person: Person;
+  public account: Account;
 
   constructor(activatedRoute: ActivatedRoute,
               titleService: TitleService,
@@ -63,6 +63,6 @@ export class ReactivePersonFormComponent extends FormComponent {
   }
 
   submitValid(): void {
-    this.person = Object.assign({}, this.form.value);
+    this.account = Object.assign({}, this.form.value);
   }
 }

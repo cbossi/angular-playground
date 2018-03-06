@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ReactivePersonFormComponent} from './reactive-person-form/reactive-person-form.component';
-import {TemplateDrivenPersonFormComponent} from './template-driven-person-form/template-driven-person-form.component';
+import {ReactiveAccountFormComponent} from './reactive-account-form/reactive-account-form.component';
+import {TemplateDrivenAccountFormComponent} from './template-driven-account-form/template-driven-account-form.component';
 
 const routes: Routes = [
   {
@@ -10,12 +10,12 @@ const routes: Routes = [
     children: [
       {
         path: 'td',
-        component: TemplateDrivenPersonFormComponent,
+        component: TemplateDrivenAccountFormComponent,
         data: {title: 'Template Driven Form'}
       },
       {
         path: 'reactive',
-        component: ReactivePersonFormComponent,
+        component: ReactiveAccountFormComponent,
         data: {title: 'Reactive Form'}
       },
     ]

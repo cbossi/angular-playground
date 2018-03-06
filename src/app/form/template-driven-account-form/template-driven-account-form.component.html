@@ -1,4 +1,4 @@
-<form (ngSubmit)="submit()" #personForm="ngForm">
+<form (ngSubmit)="submit()" #accountForm="ngForm">
 
   <h5>Personal Information</h5>
 
@@ -8,7 +8,7 @@
            class="form-control"
            id="name"
            name="name"
-           [(ngModel)]="person.name"
+           [(ngModel)]="account.name"
            required
            [class.is-invalid]="isInvalid(nameField)"
            #nameField="ngModel">
@@ -23,7 +23,7 @@
       <select class="form-control"
               id="gender"
               name="gender"
-              [(ngModel)]="person.gender"
+              [(ngModel)]="account.gender"
               required
               [class.is-invalid]="isInvalid(genderField)"
               #genderField="ngModel">
@@ -40,7 +40,7 @@
              class="form-control"
              id="age"
              name="age"
-             [(ngModel)]="person.age"
+             [(ngModel)]="account.age"
              required [min]="0"
              [class.is-invalid]="isInvalid(ageField)"
              #ageField="ngModel">
@@ -63,7 +63,7 @@
                class="form-control"
                id="email"
                name="email"
-               [(ngModel)]="person.email"
+               [(ngModel)]="account.email"
                [class.is-invalid]="isInvalid(emailField)"
                #emailField="ngModel">
         <div class="input-group-append">
@@ -81,7 +81,7 @@
                class="form-control"
                id="phone"
                name="phone"
-               [(ngModel)]="person.phone">
+               [(ngModel)]="account.phone">
         <div class="input-group-append">
           <span class="input-group-text">
             <i class="fas fa-phone"></i>
@@ -99,7 +99,7 @@
              class="form-control"
              id="street"
              name="street"
-             [(ngModel)]="person.address.street">
+             [(ngModel)]="account.address.street">
     </div>
 
     <div class="form-group col-4 col-lg-2">
@@ -108,7 +108,7 @@
              class="form-control"
              id="postalCode"
              name="postalCode"
-             [(ngModel)]="person.address.postalcCode">
+             [(ngModel)]="account.address.postalcCode">
     </div>
 
     <div class="form-group col-8 col-lg-5">
@@ -118,7 +118,7 @@
              id="city"
              name="city"
              required
-             [(ngModel)]="person.address.city"
+             [(ngModel)]="account.address.city"
              [class.is-invalid]="isInvalid(cityField)"
              #cityField="ngModel">
       <div class="invalid-feedback">
@@ -130,7 +130,7 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 
   <div *ngIf="submitted;else other_content" class="alert alert-success mt-4">
-    <pre>Submitted person: {{ person | json }}</pre>
+    <pre>Submitted account: {{ account | json }}</pre>
   </div>
 
 </form>
