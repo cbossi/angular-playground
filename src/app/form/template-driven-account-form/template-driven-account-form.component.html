@@ -105,6 +105,7 @@
                class="form-control"
                id="email"
                name="email"
+               emailAddress
                [(ngModel)]="account.email"
                [class.is-invalid]="isInvalid(emailField)"
                #emailField="ngModel">
@@ -112,6 +113,9 @@
           <span class="input-group-text">
             <i class="fas fa-envelope"></i>
           </span>
+        </div>
+        <div class="invalid-feedback">
+          Please provide a valid e-mail address.
         </div>
       </div>
     </div>

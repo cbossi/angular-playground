@@ -3,7 +3,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {ActivatedRoute} from '@angular/router';
 import {TitleService} from '../../title/title.service';
 import {FormComponent} from '../form.component';
-import {isInvalid} from '../validation/validation.util';
+import {isInvalid, validEmailAddress} from '../validation/validation.util';
 import {Gender} from '../gender';
 import {Account} from '../account';
 
@@ -31,7 +31,7 @@ export class ReactiveAccountFormComponent extends FormComponent {
       name: ['', Validators.required],
       gender: [undefined, Validators.required],
       age: [undefined, [Validators.required, Validators.min(0)]],
-      email: [''],
+      email: ['', validEmailAddress()],
       phone: [''],
       address: formBuilder.group({
         street: [''],
