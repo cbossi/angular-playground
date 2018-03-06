@@ -1,7 +1,43 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
 
-  <h5>Personal Information</h5>
+  <h5>Account</h5>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text"
+           class="form-control"
+           id="username"
+           formControlName="username"
+           [class.is-invalid]="isInvalid(usernameField)">
+    <div class="invalid-feedback">
+      Username is required.
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-6">
+      <label for="password">Password</label>
+      <input type="password"
+             class="form-control"
+             id="password"
+             formControlName="password"
+             [class.is-invalid]="isInvalid(passwordField)">
+      <div class="invalid-feedback">
+        Password is required.
+      </div>
+    </div>
+    <div class="form-group col-12 col-lg-6">
+      <label for="passwordConfirmation">Password confirmation</label>
+      <input type="password"
+             class="form-control"
+             id="passwordConfirmation"
+             formControlName="passwordConfirmation"
+             [class.is-invalid]="isInvalid(passwordConfirmationField)">
+      <div class="invalid-feedback">
+        Password confirmation is required.
+      </div>
+    </div>
+  </div>
 
+  <h5>Personal Information</h5>
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text"
@@ -13,7 +49,6 @@
       Name is required.
     </div>
   </div>
-
   <div class="form-row">
     <div class="form-group col-6">
       <label for="gender">Gender</label>
@@ -27,7 +62,6 @@
         Gender is required.
       </div>
     </div>
-
     <div class="form-group col-6">
       <label for="age">Age</label>
       <input type="number"
@@ -45,7 +79,6 @@
       </div>
     </div>
   </div>
-
   <div class="form-row">
     <div class="form-group col-12 col-lg-6">
       <label for="email">E-Mail</label>
@@ -62,7 +95,6 @@
         </div>
       </div>
     </div>
-
     <div class="form-group col-12 col-lg-6">
       <label for="phone">Phone Number</label>
       <div class="input-group">
@@ -88,7 +120,6 @@
              id="street"
              formControlName="street">
     </div>
-
     <div class="form-group col-4 col-lg-2">
       <label for="postalCode">Postal Code</label>
       <input type="text"
@@ -96,7 +127,6 @@
              id="postalCode"
              formControlName="postalCode">
     </div>
-
     <div class="form-group col-8 col-lg-5">
       <label for="city">City</label>
       <input type="text"

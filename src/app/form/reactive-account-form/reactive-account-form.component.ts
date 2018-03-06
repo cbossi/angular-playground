@@ -25,6 +25,9 @@ export class ReactiveAccountFormComponent extends FormComponent {
 
   private buildForm(formBuilder: FormBuilder): FormGroup {
     return formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      passwordConfirmation: ['', Validators.required],
       name: ['', Validators.required],
       gender: [undefined, Validators.required],
       age: [undefined, [Validators.required, Validators.min(0)]],
@@ -36,6 +39,18 @@ export class ReactiveAccountFormComponent extends FormComponent {
         city: ['', [Validators.required]],
       }),
     });
+  }
+
+  get usernameField(): AbstractControl {
+    return this.form.get('username');
+  }
+
+  get passwordField(): AbstractControl {
+    return this.form.get('password');
+  }
+
+  get passwordConfirmationField(): AbstractControl {
+    return this.form.get('passwordConfirmation');
   }
 
   get nameField(): AbstractControl {
