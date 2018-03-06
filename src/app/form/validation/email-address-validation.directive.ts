@@ -3,7 +3,7 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, Validators}
 import {validEmailAddress} from './validation.util';
 
 @Directive({
-  selector: '[emailAddress]',
+  selector: '[email-address]',
   providers: [{provide: NG_VALIDATORS, useExisting: EmailAddressValidationDirective, multi: true}]
 })
 export class EmailAddressValidationDirective implements Validator {
