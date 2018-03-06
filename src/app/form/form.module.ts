@@ -6,6 +6,7 @@ import {ReactiveAccountFormComponent} from './reactive-account-form/reactive-acc
 import {TemplateDrivenAccountFormComponent} from './template-driven-account-form/template-driven-account-form.component';
 import {EmailAddressValidationDirective} from './validation/email-address-validation.directive';
 import {MinValidationDirective} from './validation/min-validation.directive';
+import { ValidationMessageComponent } from './validation/validation-message/validation-message.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {MinValidationDirective} from './validation/min-validation.directive';
     ReactiveAccountFormComponent,
     MinValidationDirective,
     EmailAddressValidationDirective,
+    ValidationMessageComponent,
   ],
   exports: [
     FormRoutingModule,

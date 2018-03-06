@@ -9,7 +9,7 @@
            formControlName="username"
            [class.is-invalid]="isInvalid(usernameField)">
     <div class="invalid-feedback">
-      Username is required.
+      <validation-message [field]="usernameField" name="Username"></validation-message>
     </div>
   </div>
   <div class="form-row">
@@ -21,7 +21,7 @@
              formControlName="password"
              [class.is-invalid]="isInvalid(passwordField)">
       <div class="invalid-feedback">
-        Password is required.
+        <validation-message [field]="passwordField" name="Password"></validation-message>
       </div>
     </div>
     <div class="form-group col-12 col-lg-6">
@@ -32,7 +32,7 @@
              formControlName="passwordConfirmation"
              [class.is-invalid]="isInvalid(passwordConfirmationField)">
       <div class="invalid-feedback">
-        Password confirmation is required.
+        <validation-message [field]="passwordConfirmationField" name="Password confirmation"></validation-message>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
            formControlName="name"
            [class.is-invalid]="isInvalid(nameField)">
     <div class="invalid-feedback">
-      Name is required.
+      <validation-message [field]="nameField" name="Name"></validation-message>
     </div>
   </div>
   <div class="form-row">
@@ -59,7 +59,7 @@
         <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
       </select>
       <div class="invalid-feedback">
-        Gender is required.
+        <validation-message [field]="genderField" name="Gender"></validation-message>
       </div>
     </div>
     <div class="form-group col-6">
@@ -70,12 +70,7 @@
              formControlName="age"
              [class.is-invalid]="isInvalid(ageField)">
       <div class="invalid-feedback">
-        <ng-container *ngIf="ageField.errors?.required">
-          Age is required.
-        </ng-container>
-        <ng-container *ngIf="ageField.errors?.min">
-          Age must not be smaller than {{ageField.errors.min.min}}.
-        </ng-container>
+        <validation-message [field]="ageField" name="Age"></validation-message>
       </div>
     </div>
   </div>
@@ -138,7 +133,7 @@
              formControlName="city"
              [class.is-invalid]="isInvalid(cityField)">
       <div class="invalid-feedback">
-        City is required.
+        <validation-message [field]="cityField" name="City"></validation-message>
       </div>
     </div>
   </div>
