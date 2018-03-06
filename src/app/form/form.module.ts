@@ -9,8 +9,8 @@ import {UsernameValidator, UsernameValidatorDirective} from './account/username.
 import {FormRoutingModule} from './form-routing.module';
 import {ReactiveAccountFormComponent} from './reactive-account-form/reactive-account-form.component';
 import {TemplateDrivenAccountFormComponent} from './template-driven-account-form/template-driven-account-form.component';
-import {EmailAddressValidationDirective} from './validation/email-address-validation.directive';
-import {MinValidationDirective} from './validation/min-validation.directive';
+import {EmailAddressValidatorDirective} from './validation/email-address-validator.directive';
+import {MinValidatorDirective} from './validation/min-validator.directive';
 import {ValidationMessageComponent} from './validation/validation-message/validation-message.component';
 
 @NgModule({
@@ -25,8 +25,8 @@ import {ValidationMessageComponent} from './validation/validation-message/valida
     TemplateDrivenAccountFormComponent,
     ReactiveAccountFormComponent,
     ValidationMessageComponent,
-    EmailAddressValidationDirective,
-    MinValidationDirective,
+    EmailAddressValidatorDirective,
+    MinValidatorDirective,
     UsernameValidatorDirective,
   ],
   providers: [

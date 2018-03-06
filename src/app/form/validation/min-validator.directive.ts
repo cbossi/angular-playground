@@ -3,9 +3,9 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, Validators}
 
 @Directive({
   selector: '[min]',
-  providers: [{provide: NG_VALIDATORS, useExisting: MinValidationDirective, multi: true}]
+  providers: [{provide: NG_VALIDATORS, useExisting: MinValidatorDirective, multi: true}]
 })
-export class MinValidationDirective implements Validator {
+export class MinValidatorDirective implements Validator {
 
   @Input() min: number;
 

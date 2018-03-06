@@ -4,9 +4,9 @@ import {validEmailAddress} from './validation.util';
 
 @Directive({
   selector: '[email-address]',
-  providers: [{provide: NG_VALIDATORS, useExisting: EmailAddressValidationDirective, multi: true}]
+  providers: [{provide: NG_VALIDATORS, useExisting: EmailAddressValidatorDirective, multi: true}]
 })
-export class EmailAddressValidationDirective implements Validator {
+export class EmailAddressValidatorDirective implements Validator {
 
   validate(field: AbstractControl): ValidationErrors | null {
     return validEmailAddress()(field);
