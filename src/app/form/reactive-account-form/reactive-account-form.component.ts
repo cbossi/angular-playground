@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
+import * as _ from 'lodash'
 import {TitleService} from '../../title/title.service';
 import {Account} from '../account/account';
 import {Gender} from '../account/gender';
@@ -14,7 +15,7 @@ import {validEmailAddress} from '../validation/email-address.validator';
 })
 export class ReactiveAccountFormComponent extends FormComponent {
 
-  public genders = Object.values(Gender);
+  public genders = _.values(Gender);
 
   public account: Account;
 

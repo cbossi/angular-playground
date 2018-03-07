@@ -1,4 +1,5 @@
 import {AbstractControl, FormGroup} from '@angular/forms';
+import * as _ from 'lodash'
 
 // tslint:disable:max-line-length
 /* Regular expression for email address. Adopted from: https://stackoverflow.com/a/46181/6231489 */
@@ -13,7 +14,7 @@ export function isInvalid(field: AbstractControl): boolean {
 
 export function markAllAsTouched(formControl: AbstractControl): void {
   if (formControl instanceof FormGroup) {
-    Object.values(formControl.controls).forEach(control => markAllAsTouched(control));
+    _.values(formControl.controls).forEach(control => markAllAsTouched(control));
   }
   formControl.markAsTouched();
 }
