@@ -2,7 +2,7 @@
   <div class="container">
 
     <a class="navbar-brand d-flex align-items-center" href="/">
-      <img src="/assets/favicon-96x96.png" class="mr-2" />
+      <img src="/assets/favicon-96x96.png" class="mr-2"/>
       <span>Angular Playground</span>
     </a>
 
@@ -13,23 +13,23 @@
     <div class="navbar-collapse" [ngbCollapse]="collapsed">
       <ul class="navbar-nav mr-auto">
 
-        <ng-container *ngFor="let route of routes">
-          <li *ngIf="route.children" class="nav-item" ngbDropdown placement="bottom-left">
-            <a class="nav-link" id="{{route.path}}" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-              {{route.data.title}}
+        <ng-container *ngFor="let rootItem of items">
+          <li *ngIf="rootItem.children" class="nav-item" ngbDropdown placement="bottom-left">
+            <a class="nav-link" id="{{rootItem.path}}" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+              {{rootItem.title}}
             </a>
             <div class="dropdown-menu" aria-labelledby="form" ngbDropdownMenu>
-              <a *ngFor="let childRoute of route.children"
+              <a *ngFor="let childItem of rootItem.children"
                  class="dropdown-item"
                  (click)="toggleCollapsed()"
                  routerLinkActive="active"
-                 [routerLink]="[route.path, childRoute.path]">
-                {{childRoute.data.title}}
+                 [routerLink]="[rootItem.path, childItem.path]">
+                {{childItem.title}}
               </a>
             </div>
           </li>
-          <li *ngIf="!route.children" class="nav-item">
-            <a class="nav-link" [routerLink]="[route.path]">{{route.data.title}}</a>
+          <li *ngIf="!rootItem.children" class="nav-item">
+            <a class="nav-link" [routerLink]="[rootItem.path]">{{rootItem.title}}</a>
           </li>
         </ng-container>
 
