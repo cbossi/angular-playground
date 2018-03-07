@@ -1,5 +1,4 @@
-import {AbstractControl, FormGroup, Validators} from '@angular/forms';
-import {ValidatorFn} from '@angular/forms/src/directives/validators';
+import {AbstractControl, FormGroup} from '@angular/forms';
 
 // tslint:disable:max-line-length
 /* Regular expression for email address. Adopted from: https://stackoverflow.com/a/46181/6231489 */

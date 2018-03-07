@@ -6,8 +6,8 @@ import {Account} from '../account/account';
 import {Gender} from '../account/gender';
 import {UniqueUsernameValidator} from '../account/unique-username.validator';
 import {FormComponent} from '../form.component';
-import {validEmailAddress} from '../validation/email-address.validator';
 import {isInvalid} from '../form.util';
+import {validEmailAddress} from '../validation/email-address.validator';
 
 @Component({
   templateUrl: './reactive-account-form.component.html',
