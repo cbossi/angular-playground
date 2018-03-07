@@ -5,7 +5,7 @@ import {TitleService} from '../../title/title.service';
 import {Account} from '../account/account';
 import {Gender} from '../account/gender';
 import {FormComponent} from '../form.component';
-import {isInvalid} from '../validation/validation.util';
+import {isInvalid} from '../form.util';
 
 @Component({
   templateUrl: './template-driven-account-form.component.html',

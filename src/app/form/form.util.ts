@@ -18,7 +18,3 @@ export function markAllAsTouched(formControl: AbstractControl): void {
   }
   formControl.markAsTouched();
 }
-
-export function validEmailAddress(): ValidatorFn {
-  return Validators.pattern(VALID_EMAIL_ADDRESS_PATTERN);
-}

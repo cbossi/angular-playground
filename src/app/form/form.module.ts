@@ -9,7 +9,7 @@ import {UniqueUsernameValidator, UniqueUsernameValidatorDirective} from './accou
 import {FormRoutingModule} from './form-routing.module';
 import {ReactiveAccountFormComponent} from './reactive-account-form/reactive-account-form.component';
 import {TemplateDrivenAccountFormComponent} from './template-driven-account-form/template-driven-account-form.component';
-import {EmailAddressValidatorDirective} from './validation/email-address-validator.directive';
+import {EmailAddressValidatorDirective} from './validation/email-address.validator';
 import {MinValidatorDirective} from './validation/min-validator.directive';
 import {ValidationMessageComponent} from './validation/validation-message/validation-message.component';
 

@@ -1,6 +1,6 @@
 import {AbstractControl, FormGroup} from '@angular/forms';
 import {RoutedComponent} from '../shared/routed.component';
-import {isInvalid, markAllAsTouched} from './validation/validation.util';
+import {isInvalid, markAllAsTouched} from './form.util';
 
 export abstract class FormComponent extends RoutedComponent {
 
