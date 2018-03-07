@@ -5,7 +5,7 @@ import {timer} from 'rxjs/observable/timer';
 import {AccountHttpClient} from './account.http-client';
 
 @Injectable()
-export class UsernameValidator implements Validator {
+export class UniqueUsernameValidator implements Validator {
 
   constructor(private accountHttpClient: AccountHttpClient) {
   }
@@ -21,7 +21,7 @@ export class UsernameValidator implements Validator {
 
 @Directive({
   selector: '[unique-username]',
-  providers: [{provide: NG_ASYNC_VALIDATORS, useExisting: UsernameValidator, multi: true}]
+  providers: [{provide: NG_ASYNC_VALIDATORS, useExisting: UniqueUsernameValidator, multi: true}]
 })
-export class UsernameValidatorDirective {
+export class UniqueUsernameValidatorDirective {
 }
