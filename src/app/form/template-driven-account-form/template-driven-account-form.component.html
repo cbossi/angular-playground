@@ -1,4 +1,4 @@
-<form (ngSubmit)="submit()" #accountForm="ngForm">
+<form (ngSubmit)="submit()" #accountForm="ngForm" novalidate>
 
   <h5>Account</h5>
   <div class="form-group">
@@ -87,7 +87,7 @@
              id="age"
              name="age"
              [(ngModel)]="account.age"
-             required [min]="0"
+             required [min]="0" [max]="150"
              [class.is-invalid]="isInvalid(ageField)"
              #ageField="ngModel">
       <div class="invalid-feedback">
@@ -124,11 +124,17 @@
                class="form-control"
                id="phone"
                name="phone"
-               [(ngModel)]="account.phone">
+               [pattern]="'\\+41\\d{3,10}'"
+               [class.is-invalid]="isInvalid(phoneField)"
+               [(ngModel)]="account.phone"
+               #phoneField="ngModel">
         <div class="input-group-append">
           <span class="input-group-text">
             <i class="fas fa-phone"></i>
           </span>
+        </div>
+        <div class="invalid-feedback">
+          <validation-message [field]="phoneField" name="Phone number"></validation-message>
         </div>
       </div>
     </div>
@@ -150,7 +156,13 @@
              class="form-control"
              id="postalCode"
              name="postalCode"
-             [(ngModel)]="account.address.postalcCode">
+             [minLength]="4" [maxLength]="5"
+             [(ngModel)]="account.address.postalcCode"
+             [class.is-invalid]="isInvalid(postalCodeField)"
+             #postalCodeField="ngModel">
+      <div class="invalid-feedback">
+        <validation-message [field]="postalCodeField" name="Postal code"></validation-message>
+      </div>
     </div>
     <div class="form-group col-8 col-lg-5">
       <label for="city">City</label>
@@ -174,6 +186,7 @@
            id="acceptTermsAndConditions"
            name="acceptTermsAndConditions"
            [(ngModel)]="account.acceptTermsAndConditions"
+           required
            [class.is-invalid]="isInvalid(acceptTermsAndConditionsField)"
            #acceptTermsAndConditionsField="ngModel">
     <label class="form-check-label" for="acceptTermsAndConditions">Accept terms and conditions</label>

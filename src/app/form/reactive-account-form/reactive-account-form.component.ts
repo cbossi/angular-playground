@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
-import * as _ from 'lodash'
+import * as _ from 'lodash';
 import {TitleService} from '../../title/title.service';
 import {Account} from '../account/account';
 import {Gender} from '../account/gender';
@@ -34,15 +34,15 @@ export class ReactiveAccountFormComponent extends FormComponent {
       passwordConfirmation: ['', Validators.required],
       name: ['', Validators.required],
       gender: [undefined, Validators.required],
-      age: [undefined, [Validators.required, Validators.min(0)]],
+      age: [undefined, [Validators.required, Validators.min(0), Validators.max(150)]],
       email: ['', validEmailAddress()],
-      phone: [''],
+      phone: ['', Validators.pattern(/^\+41\d{3,10}$/)],
       address: formBuilder.group({
         street: [''],
-        postalCode: [''],
+        postalCode: ['', [Validators.minLength(4), Validators.maxLength(5)]],
         city: ['', [Validators.required]],
       }),
-      acceptTermsAndConditions: [false]
+      acceptTermsAndConditions: [false, Validators.requiredTrue]
     });
   }
 
@@ -74,8 +74,20 @@ export class ReactiveAccountFormComponent extends FormComponent {
     return this.form.get('email');
   }
 
+  get phoneField(): AbstractControl {
+    return this.form.get('phone');
+  }
+
+  get postalCodeField(): AbstractControl {
+    return this.addressGroup.get('postalCode');
+  }
+
   get cityField(): AbstractControl {
-    return this.form.get('address').get('city');
+    return this.addressGroup.get('city');
+  }
+
+  get addressGroup(): AbstractControl {
+    return this.form.get('address');
   }
 
   get acceptTermsAndConditionsField(): AbstractControl {

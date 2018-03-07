@@ -102,11 +102,15 @@
         <input type="tel"
                class="form-control"
                id="phone"
-               formControlName="phone">
+               formControlName="phone"
+               [class.is-invalid]="isInvalid(phoneField)">
         <div class="input-group-append">
           <span class="input-group-text">
             <i class="fas fa-phone"></i>
           </span>
+        </div>
+        <div class="invalid-feedback">
+          <validation-message [field]="phoneField" name="Phone number"></validation-message>
         </div>
       </div>
     </div>
@@ -126,7 +130,11 @@
       <input type="text"
              class="form-control"
              id="postalCode"
-             formControlName="postalCode">
+             formControlName="postalCode"
+             [class.is-invalid]="isInvalid(postalCodeField)">
+      <div class="invalid-feedback">
+        <validation-message [field]="postalCodeField" name="Postal code"></validation-message>
+      </div>
     </div>
     <div class="form-group col-8 col-lg-5">
       <label for="city">City</label>
