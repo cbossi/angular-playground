@@ -1,5 +1,4 @@
-import {Directive} from '@angular/core';
-import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, Validators} from '@angular/forms';
+import {Validators} from '@angular/forms';
 import {ValidatorFn} from '@angular/forms/src/directives/validators';
 
 // tslint:disable:max-line-length
@@ -12,14 +11,3 @@ export function validEmailAddress(): ValidatorFn {
   return Validators.pattern(VALID_EMAIL_ADDRESS_PATTERN);
 }
 
-@Directive({
-  selector: '[emailAddress]',
-  providers: [{provide: NG_VALIDATORS, useExisting: EmailAddressValidatorDirective, multi: true}]
-})
-export class EmailAddressValidatorDirective implements Validator {
-
-  validate(field: AbstractControl): ValidationErrors | null {
-    return validEmailAddress()(field);
-  }
-
-}

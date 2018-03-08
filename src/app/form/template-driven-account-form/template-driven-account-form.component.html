@@ -11,6 +11,9 @@
            required uniqueUsername
            [class.is-invalid]="isInvalid(usernameField)"
            #usernameField="ngModel">
+    <small class="form-text text-muted">
+      The usernames 'john' or 'max' already exist. Use one of them in order to trigger validation.
+    </small>
     <div class="invalid-feedback">
       <validation-message [field]="usernameField" name="Username"></validation-message>
       <ng-container *ngIf="usernameField.errors?.usernameAlreadyExists">

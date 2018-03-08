@@ -6,9 +6,7 @@ export class AccountInMemoryDataService implements InMemoryDbService {
   createDb() {
     const accounts = [
       this.createAccount('john'),
-      this.createAccount('doe'),
       this.createAccount('max'),
-      this.createAccount('muster'),
     ];
     return {accounts};
   }
