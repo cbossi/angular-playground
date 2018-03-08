@@ -86,13 +86,13 @@
                id="email"
                formControlName="email"
                [class.is-invalid]="isInvalid(emailField)">
+        <div class="invalid-feedback order-1">
+          Please provide a valid e-mail address.
+        </div>
         <div class="input-group-append">
           <span class="input-group-text">
             <i class="fas fa-envelope"></i>
           </span>
-        </div>
-        <div class="invalid-feedback">
-          Please provide a valid e-mail address.
         </div>
       </div>
     </div>
@@ -104,13 +104,13 @@
                id="phone"
                formControlName="phone"
                [class.is-invalid]="isInvalid(phoneField)">
+        <div class="invalid-feedback order-1">
+          <validation-message [field]="phoneField" name="Phone number"></validation-message>
+        </div>
         <div class="input-group-append">
           <span class="input-group-text">
             <i class="fas fa-phone"></i>
           </span>
-        </div>
-        <div class="invalid-feedback">
-          <validation-message [field]="phoneField" name="Phone number"></validation-message>
         </div>
       </div>
     </div>
