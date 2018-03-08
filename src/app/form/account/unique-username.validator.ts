@@ -20,7 +20,7 @@ export class UniqueUsernameValidator implements Validator {
 }
 
 @Directive({
-  selector: '[unique-username]',
+  selector: '[uniqueUsername]',
   providers: [{provide: NG_ASYNC_VALIDATORS, useExisting: UniqueUsernameValidator, multi: true}]
 })
 export class UniqueUsernameValidatorDirective {

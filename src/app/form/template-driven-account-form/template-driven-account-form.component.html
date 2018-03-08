@@ -8,7 +8,7 @@
            id="username"
            name="username"
            [(ngModel)]="account.username"
-           required unique-username
+           required uniqueUsername
            [class.is-invalid]="isInvalid(usernameField)"
            #usernameField="ngModel">
     <div class="invalid-feedback">
@@ -103,7 +103,7 @@
                class="form-control"
                id="email"
                name="email"
-               email-address
+               emailAddress
                [(ngModel)]="account.email"
                [class.is-invalid]="isInvalid(emailField)"
                #emailField="ngModel">

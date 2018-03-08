@@ -13,7 +13,7 @@ export function validEmailAddress(): ValidatorFn {
 }
 
 @Directive({
-  selector: '[email-address]',
+  selector: '[emailAddress]',
   providers: [{provide: NG_VALIDATORS, useExisting: EmailAddressValidatorDirective, multi: true}]
 })
 export class EmailAddressValidatorDirective implements Validator {
