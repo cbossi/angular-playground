@@ -24,7 +24,7 @@ import {ValidationMessageComponent} from './validation/validation-message/valida
     FormsModule,
     NgbModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(AccountInMemoryDataService),
+    HttpClientInMemoryWebApiModule.forFeature(AccountInMemoryDataService),
     ReactiveFormsModule
   ],
   declarations: [
