@@ -8,7 +8,6 @@ import {Gender} from '../account/gender';
 import {UniqueUsernameValidator} from '../account/unique-username.validator';
 import {FormComponent} from '../form.component';
 import {isInvalid} from '../form.util';
-import {validEmailAddress} from '../validation/email-address.validator';
 
 @Component({
   templateUrl: './reactive-account-form.component.html',
@@ -35,7 +34,7 @@ export class ReactiveAccountFormComponent extends FormComponent {
       name: ['', Validators.required],
       gender: [undefined, Validators.required],
       age: [undefined, [Validators.required, Validators.min(0), Validators.max(150)]],
-      email: ['', validEmailAddress()],
+      email: ['', Validators.email],
       phone: ['', Validators.pattern(/^\+41\d{3,10}$/)],
       address: formBuilder.group({
         street: [''],
