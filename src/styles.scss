@@ -6,6 +6,11 @@ a {
   cursor: pointer;
 }
 
+/* Fix styling of active dropdown a-tags without href-attribute */
+.dropdown-item.active, .dropdown-item:active {
+  color: #ffffff !important;
+}
+
 .input-group > .input-group-prepend > .btn,
 .input-group > .input-group-append > .btn {
   background-color: #e9ecef;

@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {Route, Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
+import {Observable} from 'rxjs/Observable';
 import {NavigationItem} from './navigation-item';
 
 @Component({
@@ -10,12 +12,21 @@ import {NavigationItem} from './navigation-item';
 export class NavigationComponent {
 
   public readonly items: NavigationItem[];
-  public readonly routes: Route[];
   public collapsed = true;
 
-  constructor(router: Router) {
-    this.routes = router.config;
+  public languages: string[];
+  public currentLanguage: Observable<string>;
+
+  constructor(router: Router,
+              private translateService: TranslateService) {
     this.items = NavigationItem.ofRoutes(router.config);
+    this.languages = translateService.getLangs();
+    this.currentLanguage = translateService.onLangChange.map(event => event.lang);
+  }
+
+  public changeLanguage(language: string) {
+    this.translateService.use(language);
+    this.toggleCollapsed();
   }
 
   public toggleCollapsed() {

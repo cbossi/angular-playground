@@ -1,0 +1,39 @@
+{
+  "FORM": {
+    "ACCOUNT": {
+      "ACCOUNT": "Konto",
+      "USERNAME": "Benutzername",
+      "USERNAME_INFO": "Folgende Benutzernamen existieren bereits: {{existingUsernames}}. Verwende einen von ihnen, um die Validierung zu provozieren.",
+      "PASSWORD": "Passwort",
+      "PASSWORD_CONFIRMATION": "Passwort Bestätigung",
+      "PERSONAL_INFORMATION": "Persönliche Angaben",
+      "NAME": "Name",
+      "DATE_OF_BIRTH": "Geburtsdatum",
+      "GENDER": "Geschlecht",
+      "AGE": "Alter",
+      "EMAIL": "E-Mail",
+      "PHONE_NUMBER": "Telefonnummer",
+      "ADDRESS": "Adresse",
+      "STREET": "Strasse",
+      "POSTAL_CODE": "PLZ",
+      "CITY": "Ort",
+      "TERMS_AND_CONDITIONS": "Ich akzeptiere die AGBs",
+      "SUBMIT": "Absenden",
+      "VALIDATION": {
+        "USERNAME_ALREADY_EXISTS": "Der Benutzername '{{username}}' existiert bereits, bitte wähle einen anderen Namen.",
+        "PASSWORD_CONFIRMATION": "Die Passwort-Bestätigung stimmt nicht mit dem Passwort überein.",
+        "TERMS_AND_CONDITIONS": "Du musst die AGbs akzeptieren."
+      }
+    },
+    "FIELD": "Feld",
+    "VALIDATION": {
+      "REQUIRED": "{{field}} is zwingend.",
+      "MIN": "{{field}} darf nicht kleiner als {{min}} sein.",
+      "MAX": "{{field}} darf nicht grösser als {{max}} sein.",
+      "MIN_LENGTH": "{{field}} muss mindestens {{minLength}} Zeichen lang sein.",
+      "MAX_LENGTH": "{{field}} darf nicht länger als {{maxLength}} Zeichen sein.",
+      "EMAIL": "Bitte gib eine gültige E-Mail Adresse an.",
+      "PATTERN": "{{field}} entspricht nicht dem geforderten Muster: {{pattern}}."
+    }
+  }
+}

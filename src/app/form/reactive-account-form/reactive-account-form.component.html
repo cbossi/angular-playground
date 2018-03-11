@@ -1,26 +1,26 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
 
-  <h5>Account</h5>
+  <h5>{{'FORM.ACCOUNT.ACCOUNT' | translate}}</h5>
   <div class="form-group">
-    <label for="username">Username</label>
+    <label for="username">{{'FORM.ACCOUNT.USERNAME' | translate}}</label>
     <input type="text"
            class="form-control"
            id="username"
            formControlName="username"
            [class.is-invalid]="isInvalid(usernameField)">
     <small class="form-text text-muted">
-      The usernames 'john' or 'max' already exist. Use one of them in order to trigger validation.
+      {{'FORM.ACCOUNT.USERNAME_INFO' | translate:{'existingUsernames': existingUsernames} }}
     </small>
     <div class="invalid-feedback">
-      <validation-message [field]="usernameField" name="Username"></validation-message>
+      <validation-message [field]="usernameField" name="{{'FORM.ACCOUNT.USERNAME' | translate}}"></validation-message>
       <ng-container *ngIf="usernameField.errors?.usernameAlreadyExists">
-        Username '{{usernameField.value}}' already exists, please select a different one.
+        {{'FORM.ACCOUNT.VALIDATION.USERNAME_ALREADY_EXISTS' | translate:{'username': usernameField.value} }}
       </ng-container>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-12 col-lg-6">
-      <label for="password">Password</label>
+      <label for="password">{{'FORM.ACCOUNT.PASSWORD' | translate}}</label>
       <input type="password"
              class="form-control"
              id="password"
@@ -28,37 +28,37 @@
              (keyup)="onPasswordChanged()"
              [class.is-invalid]="isInvalid(passwordField)">
       <div class="invalid-feedback">
-        <validation-message [field]="passwordField" name="Password"></validation-message>
+        <validation-message [field]="passwordField" name="{{'FORM.ACCOUNT.PASSWORD' | translate}}"></validation-message>
       </div>
     </div>
     <div class="form-group col-12 col-lg-6">
-      <label for="passwordConfirmation">Password confirmation</label>
+      <label for="passwordConfirmation">{{'FORM.ACCOUNT.PASSWORD_CONFIRMATION' | translate}}</label>
       <input type="password"
              class="form-control"
              id="passwordConfirmation"
              formControlName="passwordConfirmation"
              [class.is-invalid]="isInvalid(passwordConfirmationField)">
       <div class="invalid-feedback">
-        Password confirmation does not match the password.
+        {{'FORM.ACCOUNT.VALIDATION.PASSWORD_CONFIRMATION' | translate}}
       </div>
     </div>
   </div>
 
-  <h5>Personal Information</h5>
+  <h5>{{'FORM.ACCOUNT.PERSONAL_INFORMATION' | translate}}</h5>
   <div class="form-row">
     <div class="form-group col-12 col-lg-6">
-      <label for="name">Name</label>
+      <label for="name">{{'FORM.ACCOUNT.NAME' | translate}}</label>
       <input type="text"
              class="form-control"
              id="name"
              formControlName="name"
              [class.is-invalid]="isInvalid(nameField)">
       <div class="invalid-feedback">
-        <validation-message [field]="nameField" name="Name"></validation-message>
+        <validation-message [field]="nameField" name="{{'FORM.ACCOUNT.NAME' | translate}}"></validation-message>
       </div>
     </div>
     <div class="form-group col-12 col-lg-6">
-      <label for="dateOfBirth">Date of birth</label>
+      <label for="dateOfBirth">{{'FORM.ACCOUNT.DATE_OF_BIRTH' | translate}}</label>
       <div class="input-group">
         <input type="text"
                class="form-control"
@@ -77,7 +77,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col-6">
-      <label for="gender">Gender</label>
+      <label for="gender">{{'FORM.ACCOUNT.GENDER' | translate}}</label>
       <select class="form-control"
               id="gender"
               formControlName="gender"
@@ -85,24 +85,24 @@
         <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
       </select>
       <div class="invalid-feedback">
-        <validation-message [field]="genderField" name="Gender"></validation-message>
+        <validation-message [field]="genderField" name="{{'FORM.ACCOUNT.GENDER' | translate}}"></validation-message>
       </div>
     </div>
     <div class="form-group col-6">
-      <label for="age">Age</label>
+      <label for="age">{{'FORM.ACCOUNT.AGE' | translate}}</label>
       <input type="number"
              class="form-control"
              id="age"
              formControlName="age"
              [class.is-invalid]="isInvalid(ageField)">
       <div class="invalid-feedback">
-        <validation-message [field]="ageField" name="Age"></validation-message>
+        <validation-message [field]="ageField" name="{{'FORM.ACCOUNT.AGE' | translate}}"></validation-message>
       </div>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-12 col-lg-6">
-      <label for="email">E-Mail</label>
+      <label for="email">{{'FORM.ACCOUNT.EMAIL' | translate}}</label>
       <div class="input-group">
         <input type="email"
                class="form-control"
@@ -120,7 +120,7 @@
       </div>
     </div>
     <div class="form-group col-12 col-lg-6">
-      <label for="phone">Phone Number</label>
+      <label for="phone">{{'FORM.ACCOUNT.PHONE_NUMBER' | translate}}</label>
       <div class="input-group">
         <input type="tel"
                class="form-control"
@@ -128,7 +128,7 @@
                formControlName="phone"
                [class.is-invalid]="isInvalid(phoneField)">
         <div class="invalid-feedback order-1">
-          <validation-message [field]="phoneField" name="Phone number"></validation-message>
+          <validation-message [field]="phoneField" name="{{'FORM.ACCOUNT.PHONE_NUMBER' | translate}}"></validation-message>
         </div>
         <div class="input-group-append">
           <span class="input-group-text">
@@ -139,35 +139,35 @@
     </div>
   </div>
 
-  <h5>Address</h5>
+  <h5>{{'FORM.ACCOUNT.ADDRESS' | translate}}</h5>
   <div class="form-row" formGroupName="address">
     <div class="form-group col-12 col-lg-5">
-      <label for="street">Street</label>
+      <label for="street">{{'FORM.ACCOUNT.STREET' | translate}}</label>
       <input type="text"
              class="form-control"
              id="street"
              formControlName="street">
     </div>
     <div class="form-group col-4 col-lg-2">
-      <label for="postalCode">Postal Code</label>
+      <label for="postalCode">{{'FORM.ACCOUNT.POSTAL_CODE' | translate}}</label>
       <input type="text"
              class="form-control"
              id="postalCode"
              formControlName="postalCode"
              [class.is-invalid]="isInvalid(postalCodeField)">
       <div class="invalid-feedback">
-        <validation-message [field]="postalCodeField" name="Postal code"></validation-message>
+        <validation-message [field]="postalCodeField" name="{{'FORM.ACCOUNT.POSTAL_CODE' | translate}}"></validation-message>
       </div>
     </div>
     <div class="form-group col-8 col-lg-5">
-      <label for="city">City</label>
+      <label for="city">{{'FORM.ACCOUNT.CITY' | translate}}</label>
       <input type="text"
              class="form-control"
              id="city"
              formControlName="city"
              [class.is-invalid]="isInvalid(cityField)">
       <div class="invalid-feedback">
-        <validation-message [field]="cityField" name="City"></validation-message>
+        <validation-message [field]="cityField" name="{{'FORM.ACCOUNT.CITY' | translate}}"></validation-message>
       </div>
     </div>
   </div>
@@ -178,13 +178,15 @@
            id="acceptTermsAndConditions"
            formControlName="acceptTermsAndConditions"
            [class.is-invalid]="isInvalid(acceptTermsAndConditionsField)">
-    <label class="form-check-label" for="acceptTermsAndConditions">Accept terms and conditions</label>
+    <label class="form-check-label" for="acceptTermsAndConditions">
+      {{'FORM.ACCOUNT.TERMS_AND_CONDITIONS' | translate}}
+    </label>
     <div class="invalid-feedback">
-      You have to accept the terms and conditions.
+      {{'FORM.ACCOUNT.VALIDATION.TERMS_AND_CONDITIONS' | translate}}
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">{{'FORM.ACCOUNT.SUBMIT' | translate}}</button>
 
   <div *ngIf="account;else other_content" class="alert alert-success mt-4">
     <pre>Submitted account: {{ account | json }}</pre>

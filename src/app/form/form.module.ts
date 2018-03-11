@@ -1,8 +1,10 @@
 import {CommonModule} from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {AccountInMemoryDataService} from './account/account-in-memory-data.service';
 import {AccountHttpClient} from './account/account.http-client';
@@ -24,8 +26,9 @@ import {ValidationMessageComponent} from './validation/validation-message/valida
     FormsModule,
     NgbModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forFeature(AccountInMemoryDataService),
-    ReactiveFormsModule
+    HttpClientInMemoryWebApiModule.forFeature(AccountInMemoryDataService, {passThruUnknownUrl: true}),
+    ReactiveFormsModule,
+    TranslateModule,
   ],
   declarations: [
     TemplateDrivenAccountFormComponent,

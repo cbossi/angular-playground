@@ -1,0 +1,39 @@
+{
+  "FORM": {
+    "ACCOUNT": {
+      "ACCOUNT": "Account",
+      "USERNAME": "Username",
+      "USERNAME_INFO": "The following username already exist: {{existingUsernames}}. Use one of them in order to provoke validation.",
+      "PASSWORD": "Password",
+      "PASSWORD_CONFIRMATION": "Password confirmation",
+      "PERSONAL_INFORMATION": "Personal information",
+      "NAME": "Name",
+      "DATE_OF_BIRTH": "Date of birth",
+      "GENDER": "Gender",
+      "AGE": "Age",
+      "EMAIL": "E-Mail",
+      "PHONE_NUMBER": "Phone number",
+      "ADDRESS": "Address",
+      "STREET": "Street",
+      "POSTAL_CODE": "Postal code",
+      "CITY": "City",
+      "TERMS_AND_CONDITIONS": "Accept terms and conditions",
+      "SUBMIT": "Submit",
+      "VALIDATION": {
+        "USERNAME_ALREADY_EXISTS": "Username '{{username}}' already exists, please select a different one.",
+        "PASSWORD_CONFIRMATION": "Password confirmation does not match the password.",
+        "TERMS_AND_CONDITIONS": "You have to accept the terms and conditions."
+      }
+    },
+    "FIELD": "Field",
+    "VALIDATION": {
+      "REQUIRED": "{{field}} is required.",
+      "MIN": "{{field}} must not be less than {{min}}.",
+      "MAX": "{{field}} must not be bigger than {{max}}.",
+      "MIN_LENGTH": "{{field}} must have at least {{minLength}} characters.",
+      "MAX_LENGTH": "{{field}} must not have more than {{maxLength}} characters.",
+      "EMAIL": "Please provide a valid email address.",
+      "PATTERN": "{{field}} does not match the required pattern: {{pattern}}."
+    }
+  }
+}

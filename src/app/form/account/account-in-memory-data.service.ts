@@ -1,13 +1,12 @@
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 import {Account} from './account';
 
+export const EXISTING_USERNAMES = ['john', 'max'];
+
 export class AccountInMemoryDataService implements InMemoryDbService {
 
   createDb() {
-    const accounts = [
-      this.createAccount('john'),
-      this.createAccount('max'),
-    ];
+    const accounts = EXISTING_USERNAMES.map(username => this.createAccount(username));
     return {accounts};
   }
 

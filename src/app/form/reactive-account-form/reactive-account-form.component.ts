@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import * as _ from 'lodash';
 import {TitleService} from '../../title/title.service';
 import {Account} from '../account/account';
+import {EXISTING_USERNAMES} from '../account/account-in-memory-data.service';
 import {equality} from '../account/comparative-value.validator';
 import {Gender} from '../account/gender';
 import {UniqueUsernameValidator} from '../account/unique-username.validator';
@@ -16,6 +17,8 @@ import {isInvalid} from '../form.util';
 export class ReactiveAccountFormComponent extends FormComponent {
 
   public genders = _.values(Gender);
+
+  public existingUsernames = EXISTING_USERNAMES;
 
   public account: Account;
 
