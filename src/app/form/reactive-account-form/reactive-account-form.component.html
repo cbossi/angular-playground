@@ -25,6 +25,7 @@
              class="form-control"
              id="password"
              formControlName="password"
+             (keyup)="onPasswordChanged()"
              [class.is-invalid]="isInvalid(passwordField)">
       <div class="invalid-feedback">
         <validation-message [field]="passwordField" name="Password"></validation-message>
@@ -38,7 +39,7 @@
              formControlName="passwordConfirmation"
              [class.is-invalid]="isInvalid(passwordConfirmationField)">
       <div class="invalid-feedback">
-        <validation-message [field]="passwordConfirmationField" name="Password confirmation"></validation-message>
+        Password confirmation does not match the password.
       </div>
     </div>
   </div>

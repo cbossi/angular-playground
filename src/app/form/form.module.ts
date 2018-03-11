@@ -5,6 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {AccountInMemoryDataService} from './account/account-in-memory-data.service';
 import {AccountHttpClient} from './account/account.http-client';
+import {EqualityValidatorDirective} from './account/comparative-value-validator.directive';
 import {UniqueUsernameValidatorDirective} from './account/unique-username-validator.directive';
 import {UniqueUsernameValidator} from './account/unique-username.validator';
 import {FormRoutingModule} from './form-routing.module';
@@ -27,12 +28,13 @@ import {ValidationMessageComponent} from './validation/validation-message/valida
   declarations: [
     TemplateDrivenAccountFormComponent,
     ReactiveAccountFormComponent,
-    ValidationMessageComponent,
+    EqualityValidatorDirective,
     MinValidatorDirective,
     MinLengthValidatorDirective,
     MaxValidatorDirective,
     MaxLengthValidatorDirective,
     UniqueUsernameValidatorDirective,
+    ValidationMessageComponent,
   ],
   providers: [
     AccountHttpClient,

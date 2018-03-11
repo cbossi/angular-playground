@@ -31,6 +31,7 @@
              [(ngModel)]="account.password"
              required
              [class.is-invalid]="isInvalid(passwordField)"
+             (keyup)="onPasswordChanged()"
              #passwordField="ngModel">
       <div class="invalid-feedback">
         <validation-message [field]="passwordField" name="Password"></validation-message>
@@ -43,11 +44,11 @@
              id="passwordConfirmation"
              name="passwordConfirmation"
              [(ngModel)]="account.passwordConfirmation"
-             required
+             [equality]="passwordField.value"
              [class.is-invalid]="isInvalid(passwordConfirmationField)"
              #passwordConfirmationField="ngModel">
       <div class="invalid-feedback">
-        <validation-message [field]="passwordConfirmationField" name="Password confirmation"></validation-message>
+        Password confirmation does not match the password.
       </div>
     </div>
   </div>

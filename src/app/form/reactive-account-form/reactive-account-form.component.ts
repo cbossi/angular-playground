@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import * as _ from 'lodash';
 import {TitleService} from '../../title/title.service';
 import {Account} from '../account/account';
+import {equality} from '../account/comparative-value.validator';
 import {Gender} from '../account/gender';
 import {UniqueUsernameValidator} from '../account/unique-username.validator';
 import {FormComponent} from '../form.component';
@@ -30,7 +31,10 @@ export class ReactiveAccountFormComponent extends FormComponent {
     return formBuilder.group({
       username: ['', [Validators.required], [usernameValidator]],
       password: ['', Validators.required],
-      passwordConfirmation: ['', Validators.required],
+      passwordConfirmation: ['', (field: AbstractControl) => {
+        const password = this.form && this.passwordField ? this.passwordField.value : null;
+        return equality(password)(field);
+      }],
       name: ['', Validators.required],
       gender: [undefined, Validators.required],
       age: [undefined, [Validators.required, Validators.min(0), Validators.max(150)]],
@@ -43,6 +47,10 @@ export class ReactiveAccountFormComponent extends FormComponent {
       }),
       acceptTermsAndConditions: [false, Validators.requiredTrue]
     });
+  }
+
+  onPasswordChanged() {
+    this.passwordConfirmationField.updateValueAndValidity();
   }
 
   get usernameField(): AbstractControl {
