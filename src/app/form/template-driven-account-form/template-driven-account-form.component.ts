@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {AbstractControl, FormControl, NgForm} from '@angular/forms';
+import {AbstractControl, NgForm} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import * as _ from 'lodash';
 import {TitleService} from '../../title/title.service';

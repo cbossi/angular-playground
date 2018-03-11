@@ -154,8 +154,8 @@
                [(ngModel)]="account.phone"
                #phoneField="ngModel">
         <div class="invalid-feedback order-1">
-          <validation-message [field]="phoneField"
-                              name="{{'FORM.ACCOUNT.PHONE_NUMBER' | translate}}"></validation-message>
+          <validation-message [field]="phoneField" name="{{'FORM.ACCOUNT.PHONE_NUMBER' | translate}}">
+          </validation-message>
         </div>
         <div class="input-group-append">
           <span class="input-group-text">
@@ -187,8 +187,8 @@
              [class.is-invalid]="isInvalid(postalCodeField)"
              #postalCodeField="ngModel">
       <div class="invalid-feedback">
-        <validation-message [field]="postalCodeField"
-                            name="{{'FORM.ACCOUNT.POSTAL_CODE' | translate}}"></validation-message>
+        <validation-message [field]="postalCodeField" name="{{'FORM.ACCOUNT.POSTAL_CODE' | translate}}">
+        </validation-message>
       </div>
     </div>
     <div class="form-group col-8 col-lg-5">
