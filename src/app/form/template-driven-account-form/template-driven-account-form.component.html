@@ -54,20 +54,41 @@
   </div>
 
   <h5>Personal Information</h5>
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text"
-           class="form-control"
-           id="name"
-           name="name"
-           [(ngModel)]="account.name"
-           required
-           [class.is-invalid]="isInvalid(nameField)"
-           #nameField="ngModel">
-    <div class="invalid-feedback">
-      <validation-message [field]="nameField" name="Name"></validation-message>
+  <div class="form-row">
+    <div class="form-group col-12 col-lg-6">
+      <label for="name">Name</label>
+      <input type="text"
+             class="form-control"
+             id="name"
+             name="name"
+             [(ngModel)]="account.name"
+             required
+             [class.is-invalid]="isInvalid(nameField)"
+             #nameField="ngModel">
+      <div class="invalid-feedback">
+        <validation-message [field]="nameField" name="Name"></validation-message>
+      </div>
+    </div>
+    <div class="form-group col-12 col-lg-6">
+      <label for="dateOfBirth">Date of birth</label>
+      <div class="input-group">
+        <input type="text"
+               class="form-control"
+               ngbDatepicker #dateOfBirthPicker="ngbDatepicker"
+               id="dateOfBirth"
+               name="dateOfBirth"
+               (click)="dateOfBirthPicker.toggle()"
+               readonly
+               [(ngModel)]="account.dateOfBirth">
+        <div class="input-group-append">
+          <button class="btn" (click)="dateOfBirthPicker.toggle()" type="button">
+            <i class="far fa-calendar-alt"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group col-6">
       <label for="gender">Gender</label>

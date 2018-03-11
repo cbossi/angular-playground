@@ -7,6 +7,7 @@ export class Account {
   public password: string;
   public passwordConfirmation: string;
   public name: string;
+  public dateOfBirth: Date;
   public gender: Gender;
   public age: number;
   public email: string;

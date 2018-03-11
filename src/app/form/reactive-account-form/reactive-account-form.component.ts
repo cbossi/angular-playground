@@ -36,6 +36,7 @@ export class ReactiveAccountFormComponent extends FormComponent {
         return equality(password)(field);
       }],
       name: ['', Validators.required],
+      dateOfBirth: [undefined],
       gender: [undefined, Validators.required],
       age: [undefined, [Validators.required, Validators.min(0), Validators.max(150)]],
       email: ['', Validators.email],
