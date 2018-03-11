@@ -14,7 +14,6 @@ import {MaxLengthValidatorDirective} from './validation/max-length-validator.dir
 import {MaxValidatorDirective} from './validation/max-validator.directive';
 import {MinLengthValidatorDirective} from './validation/min-length-validator.directive';
 import {MinValidatorDirective} from './validation/min-validator.directive';
-import {PatternValidatorDirective} from './validation/pattern-validator.directive';
 import {ValidationMessageComponent} from './validation/validation-message/validation-message.component';
 
 @NgModule({
@@ -33,7 +32,6 @@ import {ValidationMessageComponent} from './validation/validation-message/valida
     MinLengthValidatorDirective,
     MaxValidatorDirective,
     MaxLengthValidatorDirective,
-    PatternValidatorDirective,
     UniqueUsernameValidatorDirective,
   ],
   providers: [
