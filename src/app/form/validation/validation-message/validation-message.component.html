@@ -14,6 +14,9 @@
   <ng-container *ngIf="field.errors?.minlength">
     {{name||'Field'}} must have at least {{field.errors.minlength.requiredLength}} characters.
   </ng-container>
+  <ng-container *ngIf="field.errors?.email">
+    Please provide a valid email address.
+  </ng-container>
   <ng-container *ngIf="field.errors?.pattern">
     {{name||'Field'}} does not match the required pattern: {{field.errors.pattern.requiredPattern}}.
   </ng-container>

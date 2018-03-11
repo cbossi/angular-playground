@@ -90,7 +90,7 @@
                formControlName="email"
                [class.is-invalid]="isInvalid(emailField)">
         <div class="invalid-feedback order-1">
-          Please provide a valid e-mail address.
+          <validation-message [field]="emailField"></validation-message>
         </div>
         <div class="input-group-append">
           <span class="input-group-text">
