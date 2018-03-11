@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 import {TitleService} from '../../title/title.service';
 import {Account} from '../account/account';
 import {EXISTING_USERNAMES} from '../account/account-in-memory-data.service';
-import {equality} from '../account/comparative-value.validator';
+import {passwordConfirmation} from '../account/password-confirmation.validator';
 import {Gender} from '../account/gender';
 import {UniqueUsernameValidator} from '../account/unique-username.validator';
 import {FormComponent} from '../form.component';
@@ -36,7 +36,7 @@ export class ReactiveAccountFormComponent extends FormComponent {
       password: ['', Validators.required],
       passwordConfirmation: ['', (field: AbstractControl) => {
         const password = this.form && this.passwordField ? this.passwordField.value : null;
-        return equality(password)(field);
+        return passwordConfirmation(password)(field);
       }],
       name: ['', Validators.required],
       dateOfBirth: [undefined],

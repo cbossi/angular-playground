@@ -44,7 +44,7 @@
              id="passwordConfirmation"
              name="passwordConfirmation"
              [(ngModel)]="account.passwordConfirmation"
-             [equality]="passwordField.value"
+             [passwordConfirmation]="passwordField.value"
              [class.is-invalid]="isInvalid(passwordConfirmationField)"
              #passwordConfirmationField="ngModel">
       <div class="invalid-feedback">

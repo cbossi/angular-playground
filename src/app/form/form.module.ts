@@ -8,7 +8,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {AccountInMemoryDataService} from './account/account-in-memory-data.service';
 import {AccountHttpClient} from './account/account.http-client';
-import {EqualityValidatorDirective} from './account/comparative-value-validator.directive';
+import {PasswordConfirmationValidatorDirective} from './account/password-confirmation-validator.directive';
 import {UniqueUsernameValidatorDirective} from './account/unique-username-validator.directive';
 import {UniqueUsernameValidator} from './account/unique-username.validator';
 import {FormRoutingModule} from './form-routing.module';
@@ -33,7 +33,7 @@ import {ValidationMessageComponent} from './validation/validation-message/valida
   declarations: [
     TemplateDrivenAccountFormComponent,
     ReactiveAccountFormComponent,
-    EqualityValidatorDirective,
+    PasswordConfirmationValidatorDirective,
     MinValidatorDirective,
     MinLengthValidatorDirective,
     MaxValidatorDirective,
