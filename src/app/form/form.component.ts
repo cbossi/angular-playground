@@ -4,7 +4,7 @@ import {isInvalid, markAllAsTouched} from './form.util';
 
 export abstract class FormComponent extends RoutedComponent {
 
-  protected form: FormGroup;
+  public form: FormGroup;
 
   public isInvalid(field: AbstractControl): boolean {
     return isInvalid(field);
