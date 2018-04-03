@@ -1,23 +1,23 @@
 <ng-container>
   <ng-container *ngIf="field.errors?.required">
-    {{'FORM.VALIDATION.REQUIRED' | translate:{'field': fieldName} }}
+    {{'FORM.VALIDATION.REQUIRED' | translate:{field: fieldName} }}
   </ng-container>
   <ng-container *ngIf="field.errors?.min">
-    {{'FORM.VALIDATION.MIN' | translate:{'field': fieldName, min: field.errors.min.min} }}
+    {{'FORM.VALIDATION.MIN' | translate:{field: fieldName, min: field.errors.min.min} }}
   </ng-container>
   <ng-container *ngIf="field.errors?.max">
-    {{'FORM.VALIDATION.MAX' | translate:{'field': fieldName, max: field.errors.max.max} }}
+    {{'FORM.VALIDATION.MAX' | translate:{field: fieldName, max: field.errors.max.max} }}
   </ng-container>
   <ng-container *ngIf="field.errors?.minlength">
-    {{'FORM.VALIDATION.MIN_LENGTH' | translate:{'field': fieldName, minLength: field.errors.minlength.requiredLength} }}
+    {{'FORM.VALIDATION.MIN_LENGTH' | translate:{field: fieldName, minLength: field.errors.minlength.requiredLength} }}
   </ng-container>
   <ng-container *ngIf="field.errors?.maxlength">
-    {{'FORM.VALIDATION.MAX_LENGTH' | translate:{'field': fieldName, maxLength: field.errors.maxlength.requiredLength} }}
+    {{'FORM.VALIDATION.MAX_LENGTH' | translate:{field: fieldName, maxLength: field.errors.maxlength.requiredLength} }}
   </ng-container>
   <ng-container *ngIf="field.errors?.email">
     {{'FORM.VALIDATION.EMAIL' | translate}}
   </ng-container>
   <ng-container *ngIf="field.errors?.pattern">
-    {{'FORM.VALIDATION.PATTERN' | translate:{'field': fieldName, pattern: field.errors.pattern.requiredPattern} }}
+    {{'FORM.VALIDATION.PATTERN' | translate:{field: fieldName, pattern: field.errors.pattern.requiredPattern} }}
   </ng-container>
 </ng-container>
