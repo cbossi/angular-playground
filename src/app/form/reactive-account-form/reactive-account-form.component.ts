@@ -2,9 +2,12 @@ import {Component} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import * as _ from 'lodash';
+import {Observable} from 'rxjs/Observable';
 import {TitleService} from '../../title/title.service';
 import {Account} from '../account/account';
 import {EXISTING_USERNAMES} from '../account/account-in-memory-data.service';
+import {AccountHttpClient} from '../account/account.http-client';
+import {Country} from '../account/country';
 import {Gender} from '../account/gender';
 import {passwordConfirmation} from '../account/password-confirmation.validator';
 import {UniqueUsernameValidator} from '../account/unique-username.validator';
@@ -17,7 +20,7 @@ import {isInvalid} from '../form.util';
 export class ReactiveAccountFormComponent extends FormComponent {
 
   public genders = _.values(Gender);
-
+  public countries: Observable<Country[]>;
   public existingUsernames = EXISTING_USERNAMES;
 
   public account: Account;
@@ -25,8 +28,10 @@ export class ReactiveAccountFormComponent extends FormComponent {
   constructor(activatedRoute: ActivatedRoute,
               titleService: TitleService,
               formBuilder: FormBuilder,
+              accountHttpClient: AccountHttpClient,
               usernameValidator: UniqueUsernameValidator) {
     super(activatedRoute, titleService);
+    this.countries = accountHttpClient.getCountries();
     this.form = this.buildForm(formBuilder, usernameValidator);
   }
 
@@ -42,6 +47,7 @@ export class ReactiveAccountFormComponent extends FormComponent {
       dateOfBirth: [undefined],
       gender: [undefined, Validators.required],
       age: [undefined, [Validators.required, Validators.min(0), Validators.max(150)]],
+      nationality: [undefined],
       email: ['', Validators.email],
       phone: ['', Validators.pattern(/^\+41\d{3,10}$/)],
       address: formBuilder.group({

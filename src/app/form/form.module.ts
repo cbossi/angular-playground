@@ -3,6 +3,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgSelectModule} from '@ng-select/ng-select';
 import {TranslateModule} from '@ngx-translate/core';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {AccountInMemoryDataService} from './account/account-in-memory-data.service';
@@ -23,6 +24,7 @@ import {ValidationMessageComponent} from './validation/validation-message/valida
   imports: [
     CommonModule,
     FormsModule,
+    NgSelectModule,
     NgbModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forFeature(AccountInMemoryDataService, {passThruUnknownUrl: true}),

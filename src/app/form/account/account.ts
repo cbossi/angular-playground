@@ -1,4 +1,5 @@
 import {Address} from './address';
+import {Country} from './country';
 import {Gender} from './gender';
 
 export class Account {
@@ -10,6 +11,7 @@ export class Account {
   public dateOfBirth: Date;
   public gender: Gender;
   public age: number;
+  public nationality: Country;
   public email: string;
   public phone: string;
   public address: Address;

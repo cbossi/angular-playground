@@ -11,6 +11,7 @@
       "DATE_OF_BIRTH": "Geburtsdatum",
       "GENDER": "Geschlecht",
       "AGE": "Alter",
+      "NATIONALITY": "Nationalität",
       "EMAIL": "E-Mail",
       "PHONE_NUMBER": "Telefonnummer",
       "ADDRESS": "Adresse",
