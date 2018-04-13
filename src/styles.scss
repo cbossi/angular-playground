@@ -17,3 +17,13 @@ a {
   border-color: #ced4da !important;
   color: #495057;
 }
+
+
+.is-invalid .ng-control {
+  border-color: #dc3545 !important;
+}
+
+ng-select.is-invalid ~ .invalid-feedback,
+ng-select.is-invalid ~ .invalid-tooltip {
+  display: block;
+}

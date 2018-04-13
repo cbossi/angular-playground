@@ -47,7 +47,7 @@ export class ReactiveAccountFormComponent extends FormComponent {
       dateOfBirth: [undefined],
       gender: [undefined, Validators.required],
       age: [undefined, [Validators.required, Validators.min(0), Validators.max(150)]],
-      nationality: [undefined],
+      nationality: [undefined, Validators.required],
       email: ['', Validators.email],
       phone: ['', Validators.pattern(/^\+41\d{3,10}$/)],
       address: formBuilder.group({
@@ -85,6 +85,10 @@ export class ReactiveAccountFormComponent extends FormComponent {
 
   get ageField(): AbstractControl {
     return this.form.get('age');
+  }
+
+  get nationalityField(): AbstractControl {
+    return this.form.get('nationality');
   }
 
   get emailField(): AbstractControl {
