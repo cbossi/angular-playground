@@ -27,3 +27,7 @@ ng-select.is-invalid ~ .invalid-feedback,
 ng-select.is-invalid ~ .invalid-tooltip {
   display: block;
 }
+
+input[ngbDatepicker][readonly] {
+  background-color: #ffffff !important;
+}
