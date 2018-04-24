@@ -112,7 +112,7 @@
              id="age"
              name="age"
              [(ngModel)]="account.age"
-             required [min]="0" [max]="150"
+             required min="0" max="150"
              [class.is-invalid]="isInvalid(ageField)"
              #ageField="ngModel">
       <div class="invalid-feedback">
@@ -164,7 +164,7 @@
                class="form-control"
                id="phone"
                name="phone"
-               [pattern]="'\\+41\\d{3,10}'"
+               pattern="\+41\d{3,10}"
                [class.is-invalid]="isInvalid(phoneField)"
                [(ngModel)]="account.phone"
                #phoneField="ngModel">
@@ -197,7 +197,7 @@
              class="form-control"
              id="postalCode"
              name="postalCode"
-             [minLength]="4" [maxLength]="5"
+             minLength="4" maxLength="5"
              [(ngModel)]="account.address.postalcCode"
              [class.is-invalid]="isInvalid(postalCodeField)"
              #postalCodeField="ngModel">
